@@ -1,4 +1,4 @@
-
+import os
 import re
 from datetime import datetime, timedelta, date
 
@@ -247,4 +247,7 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
         )
 
 
-demo.launch(server_name="0.0.0.0", server_port=7860)
+demo.launch(
+    server_name="0.0.0.0",
+    server_port=int(os.environ.get("PORT", 7860))
+)
